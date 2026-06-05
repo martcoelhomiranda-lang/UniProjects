@@ -5,16 +5,16 @@
 
 n1 = int(input("Digite o primeiro numero: "))
 n2 = int(input("Digite o segundo numero: "))
-
-def contarImpar(n1, n2):
-    impares = 0
-    troca = 0
-
+def ordenar_numeros(n1, n2)
     if n1 > n2:
         troca = n1
         n1 = n2
         n2 = troca
+    return n1, n2
 
+def contarImpar(n1, n2):
+    n1, n2 = ordenar_numeros(n1, n2)
+    impares = 0
     for i in range(n1 , n2 + 1):
         if i % 2 == 1:
             impares += 1

@@ -123,6 +123,9 @@ def imprimir_tabuleiro():
 vencedor = 0
 rodada_maquina = 0
 turno = random.randint(1, 2)
+placar_velha = 0
+placar_vitoria_j = 0
+placar_vitoria_m = 0
 
 tabuleiro = [
     [0, 0, 0],
@@ -146,12 +149,13 @@ imprimir_tabuleiro()
 # WHILE
 while vencedor == 0:
     if turno == 1:
-        print("Sua jogada:")
         linha, coluna = jogada_jogador()
+        print("Sua jogada:")
         imprimir_tabuleiro()
         if verificar_possibilidade(linha, coluna, simbolo_jogador):
             vencedor = 1
             print("Você ganhou!")
+            placar_vitoria_j+=1
         turno = 2
     else:
         print("Jogada da máquina:")
@@ -160,13 +164,15 @@ while vencedor == 0:
         if verificar_possibilidade(linha, coluna, simbolo_maquina):
             vencedor = 2
             print("Máquina ganhou!")
+            placar_vitoria_m+=1
         turno = 1
 
     if verificar_velha() and vencedor == 0:
         vencedor = 3
-        print("Velha!")
+        print("Velha! Mais sorte na proxima vez!")
+        placar_velha+= 1
 
-# ave
+
 
 
 

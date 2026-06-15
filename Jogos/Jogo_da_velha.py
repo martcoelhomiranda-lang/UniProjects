@@ -166,6 +166,8 @@ while vencedor == 0:
         vencedor = 3
         print("Velha!")
 
+# ave
+
 
 
 

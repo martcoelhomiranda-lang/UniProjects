@@ -85,8 +85,6 @@ def encontrar_jogada_vencedora(jogador):
             if tabuleiro[i][2-i] == 0:
                 return i, 2-i
 
-    return None
-
 def verificar_possibilidade(linha, coluna, jogador):
     if tabuleiro[linha][0] == tabuleiro[linha][1] == tabuleiro[linha][2] == jogador:
         return True

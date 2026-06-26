@@ -3,6 +3,11 @@ import random
 def jogada_jogador():
     linha = int(input("Digite a linha (0, 1 ou 2): "))
     coluna = int(input("Digite a coluna (0, 1 ou 2): "))
+    if linha < 0 or linha > 2 or coluna < 0 or coluna > 2:
+        while linha < 0 or linha > 2 or coluna < 0 or coluna > 2:
+            print("Jogada inválida!")
+            linha = int(input("Digite a linha (0, 1 ou 2): "))
+            coluna = int(input("Digite a coluna (0, 1 ou 2): "))
 
     if not tabuleiro[linha][coluna]:
         tabuleiro[linha][coluna] = simbolo_jogador
@@ -129,7 +134,7 @@ tabuleiro = [
 
 while jogar_de_novo == True :
     vencedor = 0
-    turno = 2
+    turno = random.randint(1,2)
     resetar_tabuleiro()
 
     if turno == 1:
